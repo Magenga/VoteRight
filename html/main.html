@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024政見的選擇</title>
+    <style>
+        #topicImg{
+            width: 375px;
+            height: 68px;
+        }
+        #mainPage{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .select{
+            height: 40px;
+            width: 375px;
+            margin: 10px ;
+            padding: 3px;
+            background-color: rgb(113, 94, 55);
+            cursor: pointer;
+            box-shadow: 3px 3px 0 0 black;
+            list-style-type: None;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        .Pagination{
+            display: flex;
+            justify-content: space-around;
+        }
+        .topicNum{
+            color: brown;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .progress {
+            height: 20px;
+            background-color: #4caf50;/*完成進度顏色*/
+            border-radius: 4px;
+            width: 10%;/*用js調整這個%數，每使用一次下一題就+10%，前一題則-10%*/
+        }
+    </style>
+</head>
+<body>
+    <section id="mainPage">
+        <div class="header">
+            <div class="container"><img id="topicImg" src="{{url_for('static',filename='topicimg.png')}}"></div>
+        </div>
+        <div class="container topic" style="display: block;">
+            <div class="heading">
+                <div class="topicInfon">
+                    <div class="topicType">居住正義</div>
+                    <div class="topicNum progress-bar">1 / 10
+                        <div class="progress"></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <i style="width: 10%;"></i>
+                </div>
+            </div>
+            <div class="topic-box">
+                <div class="topic-title">
+                    <div class="content">房價高，社會住宅進度緩慢，哪個政見最能解決？</div>
+                </div>
+                <div class="topic-list">
+                    <ul>
+                        <li class="select" id="select1">以興建、包租代管、租金補貼方式，讓未來8年社宅合計覆蓋100萬戶</li>
+                        <li class="select" id="select2">大力蓋社宅，並改革稅制對囤房者施以重稅，搭配出租減稅逼出空屋</li>
+                        <li class="select" id="select3">國家補助免頭期款、補貼利息的購屋方案，提早進場以免未來房價更高</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Pagination" style="display: flex;">
+                <a href="" id="previous" class="switch_btn">前一題 </a>
+                <a href="" id="next" class="switch_btn">下一題 </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
