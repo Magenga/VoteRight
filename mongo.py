@@ -9,3 +9,12 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
+
+db=client.main#選擇操作test資料庫
+collection=db.政見題目#選擇操作users集合
+def insertOne(num):
+    data={
+        "題號":num
+    }
+    collection.insert_one(data)
+
