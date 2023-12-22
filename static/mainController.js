@@ -17,9 +17,9 @@ function selectOnClick(i){
 }
 
 function lastOnClick(num){
-    num-=1;
+    num -= 1;
 }
 
 function nextOnClick(num){
-    num+=1;
+    num +=1 ;
 }
