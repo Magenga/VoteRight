@@ -9,7 +9,8 @@ main.secret_key = 'some_secret_key'
 
 @main.route("/")
 def mainrun():
-    return render_template("main.html")
+    questionNum=1
+    return render_template("main.html",questionNum=questionNum)
 
 if __name__=="__main__":
     main.run(debug=True)

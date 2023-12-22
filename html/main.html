@@ -70,17 +70,19 @@
                 </div>
                 <div class="topic-list">
                     <ul>
-                        <li class="select" id="select1">以興建、包租代管、租金補貼方式，讓未來8年社宅合計覆蓋100萬戶</li>
-                        <li class="select" id="select2">大力蓋社宅，並改革稅制對囤房者施以重稅，搭配出租減稅逼出空屋</li>
-                        <li class="select" id="select3">國家補助免頭期款、補貼利息的購屋方案，提早進場以免未來房價更高</li>
+                        <li class="select" id="select1" onclick="selectOnClick(1)">以興建、包租代管、租金補貼方式，讓未來8年社宅合計覆蓋100萬戶</li>
+                        <li class="select" id="select2" onclick="selectOnClick(2)">大力蓋社宅，並改革稅制對囤房者施以重稅，搭配出租減稅逼出空屋</li>
+                        <li class="select" id="select3" onclick="selectOnClick(3)">國家補助免頭期款、補貼利息的購屋方案，提早進場以免未來房價更高</li>
                     </ul>
                 </div>
             </div>
             <div class="Pagination" style="display: flex;">
-                <a href="" id="previous" class="switch_btn">前一題 </a>
-                <a href="" id="next" class="switch_btn">下一題 </a>
+                <a href="" id="previous" class="switch_btn" onclick="lastOnClick({{ questionNum }})">前一題 </a>
+                <a href="" id="next" class="switch_btn" onclick="nextOnClick({{ questionNum }})">下一題 </a>
             </div>
         </div>
     </section>
+    <script src="{{url_for('static',filename='mainController.js')}}">
+    </script>
 </body>
 </html>
