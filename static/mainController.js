@@ -13,7 +13,7 @@ function selectOnClick(i){
     itemAll.forEach(function(tempItem) {
         tempItem.style.backgroundColor = 'rgb(113, 94, 55)';
     })
-    item.style.backgroundColor = 'red';
+    item.style.backgroundColor = '#F56F29';
 }
 
 function lastOnClick(num){
