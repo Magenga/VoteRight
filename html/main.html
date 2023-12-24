@@ -55,8 +55,8 @@
         <div class="container topic" style="display: block;">
             <div class="heading">
                 <div class="topicInfon">
-                    <div class="topicType">居住正義</div>
-                    <div class="topicNum progress-bar">1 / 10
+                    <div class="topicType">{{ question['Q'] }}</div>
+                    <div class="topicNum progress-bar">{{ question['num'] }} / 10
                         <div class="progress"></div>
                     </div>
                 </div>
@@ -66,13 +66,13 @@
             </div>
             <div class="topic-box">
                 <div class="topic-title">
-                    <div class="content">房價高，社會住宅進度緩慢，哪個政見最能解決？</div>
+                    <div class="content">{{ question['description'] }}</div>
                 </div>
                 <div class="topic-list">
                     <ul>
-                        <li class="select" id="select1" onclick="selectOnClick(1)">以興建、包租代管、租金補貼方式，讓未來8年社宅合計覆蓋100萬戶</li>
-                        <li class="select" id="select2" onclick="selectOnClick(2)">大力蓋社宅，並改革稅制對囤房者施以重稅，搭配出租減稅逼出空屋</li>
-                        <li class="select" id="select3" onclick="selectOnClick(3)">國家補助免頭期款、補貼利息的購屋方案，提早進場以免未來房價更高</li>
+                        <li class="select" id="select1" onclick="selectOnClick(1)">{{ question['option1'] }}</li>
+                        <li class="select" id="select2" onclick="selectOnClick(2)">{{ question['option2'] }}</li>
+                        <li class="select" id="select3" onclick="selectOnClick(3)">{{ question['option3'] }}</li>
                     </ul>
                 </div>
             </div>

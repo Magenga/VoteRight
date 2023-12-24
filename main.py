@@ -23,10 +23,12 @@ main.secret_key = 'some_secret_key'
 @main.route("/")
 def mainrun():
     frontNum=str(request.args.get("num"))
-    num=collection.find_one({},{"題號":frontNum})
-    data=[num['題號']]
-    print(data)
-    return render_template("main.html",data=data)
+    question=collection.find_one({"num":frontNum})
+    if question is not None:
+        print(question)
+    else:
+        print("not found")
+    return render_template("main.html",question=question)
 
 if __name__=="__main__":
     main.run(debug=True)
