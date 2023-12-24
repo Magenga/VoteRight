@@ -20,6 +20,8 @@ function lastOnClick(){
     counter -= 1;
     if(counter == 1)
         document.querySelector("#previous").style = "display:none";
+        if(counter != 10)
+            document.querySelector("#next").innerText = "下一題";
     getData(counter);
 }
 
