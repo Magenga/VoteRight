@@ -16,7 +16,8 @@
             <div class="heading">
                 <div class="topicInfon">
                     <div class="topicType">{ question['Q'] }</div>
-                    <div class="topicNum progress-bar">{ question['num'] } / 10
+                    <div class="topicNum progress-bar">
+                        <div class="progress-text">{ question['num'] } / 10</div>
                         <div class="progress"></div>
                     </div>
                 </div>
@@ -46,6 +47,8 @@
     </script>
     <script>
         let counter = 1;
+        let ansList = [0,0,0,0,0,0,0,0,0,0,0];
+        let ans=0;
     </script>
 </body>
 </html>
