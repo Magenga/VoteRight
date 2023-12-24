@@ -37,12 +37,15 @@
                 </div>
             </div>
             <div class="Pagination" style="display: flex;">
-                <div id="previous" class="switch_btn" onclick="lastOnClick({ questionNum })">前一題 </div>
-                <div id="next" class="switch_btn" onclick="nextOnClick({ questionNum })">下一題 </div>
+                <div id="previous" class="switch_btn" onclick="lastOnClick()" style="display : none">前一題 </div>
+                <div id="next" class="switch_btn" onclick="nextOnClick()">下一題 </div>
             </div>
         </div>
     </section>
     <script src="{{url_for('static',filename='mainController.js')}}">
+    </script>
+    <script>
+        let counter = 1;
     </script>
 </body>
 </html>
