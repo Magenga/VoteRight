@@ -1,6 +1,7 @@
-from flask import Flask,render_template,render_template_string,flash,request,redirect,session
+from flask import Flask,render_template,request,redirect
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+import json
 #import pymongo
 uri = "mongodb+srv://magenga187532:magenga21airr@votecluster.iocntxo.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -22,13 +23,21 @@ main.secret_key = 'some_secret_key'
 
 @main.route("/")
 def mainrun():
-    frontNum=str(request.args.get("num"))
-    question=collection.find_one({"num":frontNum})
-    if question is not None:
-        print(question)
-    else:
-        print("not found")
-    return render_template("main.html",question=question)
+    # frontNum=str(request.args.get("num"))
+    # question=collection.find_one({"num":frontNum})
+    # if question is not None:
+    #     print(question)
+    # else:
+    #     print("not found")
+    return render_template("main.html")
+
+@main.route("/json")
+def returnJsonData():
+    num=request.args.get('num')
+    jsonData=collection.find_one({'num':num},{"_id":0})
+    Jdata=json.dumps(jsonData,ensure_ascii=False)
+    return Jdata
+    
 
 if __name__=="__main__":
     main.run(debug=True)
