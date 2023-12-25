@@ -15,9 +15,9 @@
         <div class="container topic" style="display: block;">
             <div class="heading">
                 <div class="topicInfon">
-                    <div class="topicType">{ question['Q'] }</div>
+                    <div class="topicType">你的2024選擇是</div>
                     <div class="topicNum progress-bar">
-                        <div class="progress-text">{ question['num'] } / 10</div>
+                        <div class="progress-text"> 0 / 10</div>
                         <div class="progress"></div>
                     </div>
                 </div>
@@ -27,13 +27,13 @@
             </div>
             <div class="topic-box">
                 <div class="topic-title">
-                    <div class="content">{ question['description'] }</div>
+                    <div class="content">如果明天就要投票，你會投給誰?</div>
                 </div>
                 <div class="topic-list">
                     <ul>
-                        <li class="select" id="select1" onclick="selectOnClick(1)">{ question['option1'] }</li>
-                        <li class="select" id="select2" onclick="selectOnClick(2)">{ question['option2'] }</li>
-                        <li class="select" id="select3" onclick="selectOnClick(3)">{ question['option3'] }</li>
+                        <li class="select" id="select1" onclick="selectOnClick(1)">柯文哲</li>
+                        <li class="select" id="select2" onclick="selectOnClick(2)">賴清德</li>
+                        <li class="select" id="select3" onclick="selectOnClick(3)">侯友宜</li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +46,7 @@
     <script src="{{url_for('static',filename='mainController.js')}}">
     </script>
     <script>
-        let counter = 1;
+        let counter = 0;
         let ansList = [0,0,0,0,0,0,0,0,0,0,0];
         let ans=0;
     </script>

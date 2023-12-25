@@ -14,7 +14,7 @@ db=client.main#選擇操作test資料庫
 politicsCollection=db.政見題目#選擇操作users集合
 def insertData():#新增資料
     data=[
-        {"num":"1","Q":"經濟發展","description":"經濟...","option1":"11","option2":"12","option3":"13"},
+        {"num":"1","Q":"經濟發展","description":"經濟...","option1":"台灣要從代工產業轉型以創新高附加價值產業為主，發展人才紅利，AI是未來20年要發展的產業。AI驅動產業轉型「資金、新創、人才」三箭齊發：國際資金匯集、台灣新創產業的發展、高階人才的培養。","option2":"打造自由經貿環境，融入區域經濟整合、改善投資環境，積極解決五缺問題、擴大產業研發、智慧製造與節能減碳的租稅獎勵。","option3":"推動綠色成長、啟動第二次能源轉型、協助企業立足台灣佈局全球行銷全世界、持續解決五缺問題、協助各產業節能淨零、發展五大信賴產業、創造包容成長、人才培育。"},
         {"num":"2","Q":"勞動政策","description":"勞動...","option1":"21","option2":"22","option3":"23"},
         {"num":"3","Q":"兩岸局勢","description":"兩岸...","option1":"31","option2":"32","option3":"33"},
         {"num":"4","Q":"生育政策","description":"生育...","option1":"41","option2":"42","option3":"43"},
@@ -33,5 +33,5 @@ def drop():#刪除集合
 def updateData():#修改資料第一個{條件}第二個{修改內容}
     politicsCollection.update_one()
 
-# insertData()
-# drop()
+drop()
+insertData()
