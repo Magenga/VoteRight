@@ -12,7 +12,6 @@ function lastOnClick(){
 
     setBackground(ansList[counter]);
     ans = ansList[counter];
-    setProgress(counter);
     getData(counter);
 }
 
@@ -29,7 +28,6 @@ function nextOnClick(){
 
     setBackground(ansList[counter]);
     ans = ansList[counter];
-    setProgress(counter);
     getData(counter);
 }
 
@@ -42,6 +40,7 @@ function getData(num) {
                 document.querySelector(".topicType").innerText = data.Q;
                 document.querySelector(".content").innerText = data.description;
                 document.querySelector(".progress-text").innerText = num + " / 10";
+                document.querySelector(".progress").style.width =  num*10 + "%";
                 document.querySelector("#select1").innerText = data.option1; 
                 document.querySelector("#select2").innerText = data.option2; 
                 document.querySelector("#select3").innerText = data.option3; 
@@ -71,7 +70,3 @@ function setBackground(i) {
     item.style.backgroundColor = '#F56F29';
 }
 
-
-function setProgress(num){
-    document.querySelector(".progress").style.width =  num*10 + "%";
-}
