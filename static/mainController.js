@@ -24,9 +24,11 @@ function nextOnClick(){
     if(counter == 10)
         document.querySelector("#next").innerText = "送出";
     if(counter == 11){
-        console.log(ansList);
         setAns();
-        saveData();}
+        saveData();
+        setChart();
+        return;
+    }
 
     setBackground(ansList[counter]);
     ans = ansList[counter];
@@ -39,17 +41,17 @@ function getData(num) {
         fetch(x).then(function (response) { 
             return response.json(); 
         }).then(function (data) { 
-                document.querySelector(".topicType").innerText = data.Q;
-                document.querySelector(".content").innerText = data.description;
-                document.querySelector(".progress-text").innerText = num + " / 10";
-                document.querySelector(".progress").style.width =  num*10 + "%";
-                document.querySelector("#select1").innerText = data.option1; 
-                document.querySelector("#select2").innerText = data.option2; 
-                document.querySelector("#select3").innerText = data.option3; 
-                resolve(); 
-            }) 
+            document.querySelector(".topicType").innerText = data.Q;
+            document.querySelector(".content").innerText = data.description;
+            document.querySelector(".progress-text").innerText = num + " / 10";
+            document.querySelector(".progress").style.width =  num*10 + "%";
+            document.querySelector("#select1").innerText = data.option1; 
+            document.querySelector("#select2").innerText = data.option2; 
+            document.querySelector("#select3").innerText = data.option3; 
+            resolve(); 
         }) 
-    }
+    }) 
+}
 
 function setBackground(i) {
     let itemAll = document.querySelectorAll(".select");
@@ -83,26 +85,38 @@ function saveData(){
     })
     .then(response => response.json())
     .then(data => console.log('成功:', data))
-    .catch((error) => console.error('錯誤:', error));}
+    .catch((error) => console.error('錯誤:', error));
+}
 
  
 function setAns(){    
     Object.keys(finAns).forEach((key, index) => {
-        finAns[key] = ansList[index] ?? finAns[key];});
-    }
+        finAns[key] = ansList[index] ?? finAns[key];
+    });
+}
 
-window.onload = function() {
-    var ctx = document.getElementById('myPieChart').getContext('2d');
+function setChart() {
+    var chart = document.getElementById('myPieChart');
+    var ctx = chart.getContext('2d');
+    chart.style = "";
+    var topic = document.getElementsByClassName('topic');
+    topic[0].style = "display:none";
+    let a=0 ,b=0 ,c=0;
+    for(let i=0;i<10;i++){
+        if(ansList[i]==1) a++ ;
+        else if(ansList[i]==2) b++ ;
+        else c++ ;
+    }
     var myPieChart = new Chart(ctx, {
         type: 'pie', // 指定圖表類型為圓餅圖
         data: {
-            labels: ['紅色', '藍色', '黃色'], // 標籤
+            labels: ['藍色', '綠色', '白色'], // 標籤
             datasets: [{
-                data: [300, 50, 100], // 數據
+                data: [a ,b, c], // 數據
                 backgroundColor: [ // 每個部分的顏色
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)'
+                    'blue',
+                    'green',
+                    'white'
                 ],
                 borderColor: [ // 每個部分邊框的顏色
                     'rgba(255,99,132,1)',
@@ -124,4 +138,5 @@ window.onload = function() {
                 }
             }
         }
-    });}
+    });
+}
