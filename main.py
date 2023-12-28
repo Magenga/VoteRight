@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,jsonify
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import json
@@ -13,6 +13,7 @@ except Exception as e:
 
 db=client.main#選擇操作test資料庫
 collection=db.政見題目#選擇操作users集合
+ansCollection=db.結果數據
 main= Flask(
     __name__,
     static_folder="static", #靜態檔案資料夾的名稱
@@ -38,6 +39,11 @@ def returnJsonData():
     Jdata=json.dumps(jsonData,ensure_ascii=False)
     return Jdata
     
+@main.route("/saveData",methods=["POST"])
+def saveData():
+    data=request.json
+    result = ansCollection.insert_one(data)
+    return jsonify({'message': '數據已保存', 'id': str(result.inserted_id)})
 
 if __name__=="__main__":
     main.run(debug=True)

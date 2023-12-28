@@ -7,7 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mainCss.css')}}">
 </head>
 <body>
-    <img id="backgroundimg" src="{{url_for('static',filename='background.png')}}">
+    <img id="backgroundimg" src="{{url_for('static',filename='background2.png')}}">
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
     <section id="mainPage">
         <div class="header">
             <div class="container"><img id="topicImg" src="{{url_for('static',filename='topicimg2.png')}}"></div>
@@ -43,12 +46,16 @@
             </div>
         </div>
     </section>
+    <div>
+        <canvas id="myPieChart" width="400" height="400" style="display: none;"></canvas>
+      </div>
     <script src="{{url_for('static',filename='mainController.js')}}">
     </script>
     <script>
         let counter = 0;
-        let ansList = [0,0,0,0,0,0,0,0,0,0,0];
+        let ansList = [0,0,0,0,0,0,0,0,0,0,0,0];
         let ans=0;
+        let finAns={"sex":0,"Q1":0,"Q2":0,"Q3":0,"Q4":0,"Q5":0,"Q6":0,"Q7":0,"Q8":0,"Q9":0,"Q10":0,"choose":0}
     </script>
 </body>
 </html>

@@ -21,7 +21,10 @@ def insertData():#新增資料
         {"num":"5","Q":"教育趨勢","description":"教育...","option1":"51","option2":"52","option3":"53"},
         {"num":"6","Q":"能源政策","description":"能源...","option1":"61","option2":"62","option3":"63"},
         {"num":"7","Q":"住宅方針","description":"住宅...","option1":"71","option2":"72","option3":"73"},
-        {"num":"8","Q":"長照醫療","description":"長照...","option1":"81","option2":"82","option3":"83"}]
+        {"num":"8","Q":"長照醫療","description":"長照...","option1":"81","option2":"82","option3":"83"},
+        {"num":"9","Q":"農業發展","description":"農業...","option1":"91","option2":"92","option3":"93"},
+        {"num":"10","Q":"永續環境","description":"永續...","option1":"101","option2":"102","option3":"103"}]
+
     politicsCollection.insert_many(data)
 
 def drop():#刪除集合
@@ -33,5 +36,5 @@ def drop():#刪除集合
 def updateData():#修改資料第一個{條件}第二個{修改內容}
     politicsCollection.update_one()
 
-drop()
-insertData()
+# drop()
+# insertData()
