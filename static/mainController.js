@@ -73,11 +73,6 @@ function setBackground(i) {
 }
 
 
-function setProgress(num){
-    document.querySelector(".progress").style.width =  num*10 + "%";
-}
-
-
 function saveData(){
     fetch('/saveData', {
         method: 'POST',
