@@ -20,6 +20,7 @@
     text-shadow: 1px 1px black;
     font-size: 150%;
     font-family:DFKai-sb;
+    border-radius: 5px;
 }
 .Pagination{
     display: flex;
