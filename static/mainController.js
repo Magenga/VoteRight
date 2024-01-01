@@ -27,6 +27,9 @@ function nextOnClick(){
         setAns();
         saveData();
         setChart();
+        document.querySelectorAll(".end").forEach(function(el) {
+            el.style.display = "";
+        });
         return;
     }
 
@@ -110,31 +113,32 @@ function setChart() {
     var myPieChart = new Chart(ctx, {
         type: 'pie', // 指定圖表類型為圓餅圖
         data: {
-            labels: ['藍色', '綠色', '白色'], // 標籤
+            labels: ['柯文哲', '侯友宜', '賴清德'], // 標籤
             datasets: [{
                 data: [a ,b, c], // 數據
                 backgroundColor: [ // 每個部分的顏色
+                    'rgb(0, 255, 255)',
                     'blue',
-                    'green',
-                    'white'
+                    'green'
                 ],
                 borderColor: [ // 每個部分邊框的顏色
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'
+                    'black',
+                    'black',
+                    'black'
                 ],
                 borderWidth: 1 // 邊框寬度
             }]
         },
         options: {
-            responsive: true, // 圖表是否應該響應式調整
+            height:"300px",
+            responsive: false, // 圖表是否應該響應式調整
             plugins: {
                 legend: {
                     position: 'top', // 圖例位置
                 },
                 title: {
                     display: true,
-                    text: '圓餅圖示例' // 圖表標題
+                    text: '你對於政策傾向的是' // 圖表標題
                 }
             }
         }

@@ -46,9 +46,35 @@
             </div>
         </div>
     </section>
-    <div>
-        <canvas id="myPieChart" width="400" height="400" style="display: none;"></canvas>
-      </div>
+    <div style="display: flex;justify-content: space-around;;">
+        <canvas id="myPieChart" width="300" height="300" style="display: none;"></canvas>
+    </div>
+    <!-- 最後結果 -->
+    <div style="display: flex;flex-direction: column;align-items: center;">
+        {% for i in allData %}
+        <div class="end" style="display: none;">
+            <div class="resultTopic">{{ i['Q'] }}</div>
+            <div class="topic-list">
+                <ul>
+                    <div style="display: flex;">
+                        <img class="men" src="{{url_for('static',filename='kp.png')}}">
+                        <li class="select" id="select1">{{ i['option1'] }}</li>
+                    </div>
+                    <div style="display: flex;">
+                        <img class="men" src="{{url_for('static',filename='hou.png')}}">
+                        <li class="select" id="select2">{{ i['option2'] }}</li>
+                    </div>
+                    <div style="display: flex;">
+                        <img class="men" src="{{url_for('static',filename='lai.png')}}">
+                        <li class="select" id="select3">{{ i['option3'] }}</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!--  -->
+
     <script src="{{url_for('static',filename='mainController.js')}}">
     </script>
     <script>

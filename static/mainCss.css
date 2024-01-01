@@ -8,8 +8,8 @@
     align-items: center;
 }
 .select{
-    height: 80px;
-    width: 375px;
+    height: 100px;
+    width: 400px;
     margin: 10px ;
     padding: 3px;
     background-color: rgb(113, 94, 55);
@@ -38,7 +38,7 @@
     border-radius: 4px;
     width: 10%;/*用js調整這個%數，每使用一次下一題就+10%，前一題則-10%*/
 }
-#backgroundimg{ position: absolute;
+#backgroundimg{ position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -54,4 +54,10 @@
 }
 .topicType,.content{
     background-color: bisque;
+}
+.men{
+    height: 100px;
+}
+.content{
+    width: 500px;
 }

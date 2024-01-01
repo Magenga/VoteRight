@@ -24,13 +24,9 @@ main.secret_key = 'some_secret_key'
 
 @main.route("/")
 def mainrun():
-    # frontNum=str(request.args.get("num"))
-    # question=collection.find_one({"num":frontNum})
-    # if question is not None:
-    #     print(question)
-    # else:
-    #     print("not found")
-    return render_template("main.html")
+    # for i in collection.find():
+    #     print(i['Q'])
+    return render_template("main.html",allData=list(collection.find()))
 
 @main.route("/json")
 def returnJsonData():
