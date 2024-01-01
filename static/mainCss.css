@@ -18,6 +18,8 @@
     list-style-type: None;
     color: white;
     text-shadow: 1px 1px black;
+    font-size: 150%;
+    font-family:DFKai-sb;
 }
 .Pagination{
     display: flex;
@@ -74,4 +76,16 @@
     flex-direction:column;
     width: 100vw;
     width: 500px;
+}
+.selectEnd{
+    height: 120px;
+    width: 400px;
+    margin: 10px ;
+    padding: 3px;
+    background-color: rgb(113, 94, 55);
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0 black;
+    list-style-type: None;
+    color: white;
+    text-shadow: 1px 1px black;
 }
