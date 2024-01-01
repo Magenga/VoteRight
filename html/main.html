@@ -33,7 +33,7 @@
                     <div class="content">如果明天就要投票，你會投給誰?</div>
                 </div>
                 <div class="topic-list">
-                    <ul>
+                    <ul style="padding: 0;">
                         <li class="select" id="select1" onclick="selectOnClick(1)">柯文哲</li>
                         <li class="select" id="select2" onclick="selectOnClick(2)">賴清德</li>
                         <li class="select" id="select3" onclick="selectOnClick(3)">侯友宜</li>
@@ -50,7 +50,7 @@
         <canvas id="myPieChart" width="300" height="300" style="display: none;"></canvas>
     </div>
     <!-- 最後結果 -->
-    <div style="display: flex;flex-direction: column;align-items: center;">
+    <div class="endBox">
         {% for i in allData %}
         <div class="end" style="display: none;">
             <div class="resultTopic">{{ i['Q'] }}</div>
