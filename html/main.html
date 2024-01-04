@@ -11,6 +11,8 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v18.0" nonce="ihp0Vynd"></script>
     <img id="backgroundimg" src="{{url_for('static',filename='background2.png')}}">
       
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -53,6 +55,7 @@
     <div style="display: flex;justify-content: space-around;;">
         <canvas id="myPieChart" width="300" height="300" style="display: none;"></canvas>
     </div>
+    <div class="fb-share-button" data-href="https://two024voteright.onrender.com/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftwo024voteright.onrender.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a></div>
     <!-- 最後結果 -->
     <div class="endBox">
         {% for i in allData %}
