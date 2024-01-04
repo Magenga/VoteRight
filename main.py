@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,jsonify
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import json
+import random
 #import pymongo
 uri = "mongodb+srv://magenga187532:magenga21airr@votecluster.iocntxo.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri, server_api=ServerApi('1'), tls=True, tlsAllowInvalidCertificates=True)
@@ -24,9 +25,14 @@ main.secret_key = 'some_secret_key'
 
 @main.route("/")
 def mainrun():
-    # for i in collection.find():
-    #     print(i['Q'])
-    return render_template("main.html",allData=list(collection.find()))
+    finList=[[1],[2],[3]]
+    list1=[1,2,3]
+    for ran in range(10):
+        listR=random.sample(list1,k=3)
+        for ranNum in range(3):
+            finList[ranNum].append(listR[ranNum])
+    print(finList)
+    return render_template("main.html",finList=finList,allData=list(collection.find()))
 
 @main.route("/json")
 def returnJsonData():

@@ -36,5 +36,5 @@ def drop():#刪除集合
 def updateData():#修改資料第一個{條件}第二個{修改內容}
     politicsCollection.update_one()
 
-drop()
-insertData() 
+# drop()
+# insertData() 
